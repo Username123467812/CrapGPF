@@ -13,13 +13,13 @@ def loadFileResponse():
 def getResponse(sentence):
     p_array = loadFilePrompt()
     r_array = loadFileResponse()
-    words = sentence.split()
+    words = sentence.lower().split()
     best_index = 0
     best_length = 0
     
     # check compatability with prompts
     for i in range(len(p_array)):
-        p_words = p_array[i].split()
+        p_words = p_array[i].lower().split()
 
         # get number of shared words
         try_length = len(set(p_words).intersection(set(words)))
@@ -30,13 +30,17 @@ def getResponse(sentence):
             best_length = try_length
             best_index = i
     
-    # return the best possible response
-    return r_array[best_index]
+    # return the best possible response if prompt's not blank
+    output = r_array[best_index]
+    if sentence == "" or sentence == " ":
+        output = ""
+    return output
 
 def prompt(text):
     sentences = text.split(".")
-    for i in range(len(sentences)):
-        sentences = sentences + sentences[i].split("?")
+    sentences1 = sentences
+    for i in range(len(sentences1)):
+        sentences = sentences + sentences1[i].split("?")
     response = ""
 
     for i in range(len(sentences)):
