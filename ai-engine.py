@@ -41,11 +41,13 @@ def prompt(text):
     sentences1 = sentences
     for i in range(len(sentences1)):
         sentences = sentences + sentences1[i].split("?")
-    response = ""
+    
+    response_array = []
 
     for i in range(len(sentences)):
-        response = response + " " + getResponse(sentences[i].replace("'","").replace(",",""))
+        response_array.append(getResponse(sentences[i].replace("'","").replace(",","")))
     
+    response = "".join(response_array)
     return response
 
 def runLoop():
