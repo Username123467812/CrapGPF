@@ -24,13 +24,19 @@ def getResponse(sentence):
 
 def prompt(text):
     sentences = text.split(".")
+    response = ""
 
     for i in range(len(sentences)):
-        getResponse(sentences[i])
+        response = response + getResponse(sentences[i])
+    
+    return response
 
 def runLoop():
-    input_prompt = input()
-    if input == "exit":
-        exit()
-    else:
-        prompt(input())
+    while True:
+        input_prompt = input()
+        if input == "exit":
+            exit()
+        else:
+            prompt(input())
+
+print(prompt(input()))
