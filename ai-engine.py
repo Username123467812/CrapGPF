@@ -1,7 +1,18 @@
-p_array = ["","What's your favorite color?","How tall am I?","How do I start a war?","What color is a banana?","How to leave a country?"]
-r_array = ["I can't respond to that.","I like the color orange.","I'll go with 1.7 meters, but I obviously can't say for sure.","War is not adviseable.","A banana is yellow.","Try crossing a border."]
+p_array = []
+r_array = []
+
+def loadFilePrompt():
+    with open('prompt-data.txt', 'r') as file:
+        lines = file.readlines()
+        return [line.strip() for line in lines] # remove line characters
+def loadFileResponse():
+    with open('answer-data.txt', 'r') as file:
+        lines = file.readlines()
+        return [line.strip() for line in lines] # remove line characters
 
 def getResponse(sentence):
+    p_array = loadFilePrompt()
+    r_array = loadFileResponse()
     words = sentence.split()
     best_index = 0
     best_length = 0
@@ -27,7 +38,7 @@ def prompt(text):
     response = ""
 
     for i in range(len(sentences)):
-        response = response + getResponse(sentences[i])
+        response = response + getResponse(sentences[i].replace("?","").replace("'",""))
     
     return response
 
@@ -39,4 +50,5 @@ def runLoop():
         else:
             prompt(input())
 
+# have a prompt happen
 print(prompt(input()))
