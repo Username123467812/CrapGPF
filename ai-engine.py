@@ -35,6 +35,8 @@ def getResponse(sentence):
 
 def prompt(text):
     sentences = text.split(".")
+    for i in range(len(sentences)):
+        sentences[i].split("?")
     response = ""
 
     for i in range(len(sentences)):
