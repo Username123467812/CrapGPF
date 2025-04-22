@@ -36,11 +36,11 @@ def getResponse(sentence):
 def prompt(text):
     sentences = text.split(".")
     for i in range(len(sentences)):
-        sentences[i].split("?")
+        sentences = sentences + sentences[i].split("?")
     response = ""
 
     for i in range(len(sentences)):
-        response = response + getResponse(sentences[i].replace("?","").replace("'","").replace(",",""))
+        response = response + " " + getResponse(sentences[i].replace("'","").replace(",",""))
     
     return response
 
