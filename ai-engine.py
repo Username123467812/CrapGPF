@@ -38,7 +38,7 @@ def prompt(text):
     response = ""
 
     for i in range(len(sentences)):
-        response = response + getResponse(sentences[i].replace("?","").replace("'",""))
+        response = response + getResponse(sentences[i].replace("?","").replace("'","").replace(",",""))
     
     return response
 
