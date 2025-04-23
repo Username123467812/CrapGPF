@@ -31,7 +31,7 @@ def getResponse(sentence):
             best_index = i
     
     # return the best possible response if prompt's not blank
-    output = r_array[best_index]
+    output = r_array[best_index] + " "
     if sentence == "" or sentence == " ":
         output = ""
     return output
@@ -45,7 +45,8 @@ def prompt(text):
     response_array = []
 
     for i in range(len(sentences)):
-        response_array.append(getResponse(sentences[i].replace("'","").replace(",","")))
+        if not getResponse(sentences[i].replace("'","").replace(",","")) in response_array:
+            response_array.append(getResponse(sentences[i].replace("'","").replace(",","")))
     
     response = "".join(response_array)
     return response
