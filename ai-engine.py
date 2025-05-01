@@ -56,7 +56,7 @@ def runLoop():
     print("--CrapGPF v" + version + "--")
     print("Enter '!exit' to exit program.")
     while True:
-        input_prompt = input("Prompt: ")
+        input_prompt = input(": ")
         if input_prompt == "!exit":
             print("--End of Program--")
             exit()
