@@ -1,5 +1,6 @@
 p_array = []
 r_array = []
+version = "0.1"
 
 def loadFilePrompt():
     with open('prompt-data.txt', 'r') as file:
@@ -52,12 +53,15 @@ def prompt(text):
     return response
 
 def runLoop():
+    print("--CrapGPF v" + version + "--")
+    print("Enter '!exit' to exit program.")
     while True:
-        input_prompt = input()
-        if input == "exit":
+        input_prompt = input("Prompt: ")
+        if input_prompt == "!exit":
+            print("--End of Program--")
             exit()
         else:
-            prompt(input())
+            print("> " + prompt(input_prompt))
 
 # have a prompt happen
-print(prompt(input()))
+runLoop()
