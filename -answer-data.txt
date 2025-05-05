@@ -21,4 +21,4 @@ The primary component in a pencil is graphite.
 e
 So far, it's going pretty good.
 I'm doing fine, thanks for asking.
-You can use '!exit' to end the conversation.
+You can use '!quit' to end the conversation.
