@@ -54,11 +54,11 @@ def prompt(text):
 
 def runLoop():
     print("--CrapGPF v" + version + "--")
-    print("Enter '!exit' to exit program.")
+    print("Enter '!quit' to exit program.")
     while True:
         input_prompt = input(": ")
-        if input_prompt == "!exit":
-            print("--End of Program--")
+        if input_prompt == "!quit":
+            print("--end--")
             exit()
         else:
             print("> " + prompt(input_prompt))
