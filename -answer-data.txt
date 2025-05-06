@@ -1,5 +1,5 @@
 
-I like the color orange.
+Orange is a good color.
 I'll go with 1.7 meters, but I can't say for sure.
 You can start writing an essay by crafting an outline around a central claim or thesis.
 To start an essay, craft an outline around a central claim or thesis.
@@ -22,3 +22,8 @@ e
 So far, it's going pretty good.
 I'm doing fine, thanks for asking.
 You can use '!quit' to end the conversation.
+Don't worry about it.
+Happy to help!
+Some people think it is.
+Math made this program possible!
+I like math a lot.
