@@ -1,3 +1,4 @@
+# Enjoy my awful(ish) code!
 p_array = []
 r_array = []
 version = "0.1"
@@ -85,5 +86,5 @@ def runProgram():
         else:
             print("> " + prompt(input_prompt, profile))
 
-# have a prompt happen
+# trigger the run loop
 runProgram()
