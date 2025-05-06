@@ -52,17 +52,38 @@ def prompt(text, p):
     response = "".join(response_array)
     return response
 
-def runLoop():
+def runProgram():
     print("--CrapGPF v" + version + "--")
     print("Enter '!quit' to exit program.")
-    profile = input("Data Set Profile (leave blank for default): ")
+
+    # data set profiles
+    files_exist = False
+    while not files_exist: # repeat asking for data set until input is a valid set
+        profile = input("Data Profile (leave blank for default): ")
+        try:
+            open((profile + '-prompt-data.txt'), 'r')
+            open((profile + '-answer-data.txt'), 'r')
+        except:
+            print("Data profile [" + profile + "] not found!")
+            files_exist = False
+        else:
+            if profile == "":
+                print("Using default data profile.")
+            else:
+                print("Using data profile [" + profile + "]")
+            files_exist = True
+
+    # main run loop
     while True:
         input_prompt = input(": ")
-        if input_prompt == "!quit":
-            print("--end--")
-            exit()
+        if input_prompt.startswith("!"):
+            if input_prompt == "!quit":
+                print("--end--")
+                exit()
+            else:
+                print("Command not recognized.")
         else:
             print("> " + prompt(input_prompt, profile))
 
 # have a prompt happen
-runLoop()
+runProgram()
