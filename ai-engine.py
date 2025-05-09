@@ -69,7 +69,7 @@ def runProgram():
             files_exist = False
         else:
             if profile == "":
-                print("Using default data profile.")
+                print("Using default data profile")
             else:
                 print("Using data profile [" + profile + "]")
             files_exist = True

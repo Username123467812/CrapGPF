@@ -1,4 +1,6 @@
 
+Yes
+No
 Whats your favorite color
 How tall
 How write essay
@@ -27,3 +29,9 @@ Thanks so much
 Is math fun
 Is math cool
 Do like math
+Hi
+Hello
+Can you homework for me
+Bye
+See later
+Goodbye
