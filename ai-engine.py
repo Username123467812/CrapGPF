@@ -1,7 +1,7 @@
 # Enjoy my awful(ish) code!
 p_array = []
 r_array = []
-version = "0.1"
+version = "1.0"
 
 def loadFilePrompt(p):
     with open((p + '-prompt-data.txt'), 'r') as file:
@@ -76,15 +76,17 @@ def runProgram():
 
     # main run loop
     while True:
-        input_prompt = input(": ")
-        if input_prompt.startswith("!"):
+        input_prompt = input(": ") # get input prompt
+        if input_prompt.startswith("!"): # commands
             if input_prompt == "!quit":
                 print("--end--")
                 exit()
+            elif input_prompt == "!PLACEHOLDER":
+                print("PLACEHOLDER")
             else:
-                print("Command not recognized.")
+                print("Command not recognized!")
         else:
-            print("> " + prompt(input_prompt, profile))
+            print(profile + "> " + prompt(input_prompt, profile))
 
 # trigger the run loop
 runProgram()
