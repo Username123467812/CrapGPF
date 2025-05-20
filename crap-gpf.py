@@ -51,7 +51,10 @@ def prompt(text, p):
             response_array.append(getResponse(sentences[i].replace("'","").replace(",",""), p))
     
     response = "".join(response_array)
-    return response
+    if response.replace(" ", "") == "":
+        return "Could not provide answer to that query."
+    else:
+        return response
 
 def runProgram():
     print("--CrapGPF v" + version + "--")
@@ -78,10 +81,10 @@ def runProgram():
     while True:
         input_prompt = input(": ") # get input prompt
         if input_prompt.startswith("!"): # commands
-            if input_prompt == "!quit":
-                print("--end--")
+            if input_prompt.lower() == "!quit":
+                print("--END OF CONVERSATION--")
                 exit()
-            elif input_prompt == "!PLACEHOLDER":
+            elif input_prompt.lower() == "!placeholder":
                 print("PLACEHOLDER")
             else:
                 print("Command not recognized!")

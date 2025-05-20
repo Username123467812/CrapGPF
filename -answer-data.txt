@@ -31,7 +31,10 @@ Math made this program possible!
 I like math a lot.
 Hello there!
 Hello!
+Yes, you should.
+No, that's not a good idea.
 No. That would be cheating.
+No, I will not help you cheat on your homework.
 Goodbye!
 Bye!
 See you later!
